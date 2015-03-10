@@ -9,8 +9,11 @@ import java.util.concurrent.ScheduledExecutorService;
  * @author michael
  */
 class ConditionCheck {
-    //from java scheduler library. used to schedule the 
-    //task of getting weather data and rating how good the conditions are for spearfising
+    /*
+    from java scheduler library. used to schedule the 
+    task of getting weather data and rating how good the 
+    conditions are for spearfising
+    */
     private final ScheduledExecutorService scheduler =
      Executors.newScheduledThreadPool(1);
     

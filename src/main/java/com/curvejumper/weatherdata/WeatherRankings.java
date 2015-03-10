@@ -10,5 +10,9 @@ package com.curvejumper.weatherdata;
  * @author michael
  */
 public class WeatherRankings {
+    /*
+    weather rankings will get CurrentWeatherData and IdealWeather
+    to compare and put in hash map. 
+    */
     
 }
