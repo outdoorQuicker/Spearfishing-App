@@ -15,7 +15,7 @@ public interface Weather {
      *a wind object
      * @return  wind speed
      */
-    public int Wind();
+    public double Wind();
     
     /**
      *checks if it rained in the near past

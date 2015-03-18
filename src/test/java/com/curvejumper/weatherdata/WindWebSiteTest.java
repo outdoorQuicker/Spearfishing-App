@@ -16,9 +16,9 @@ import static org.junit.Assert.*;
  *
  * @author curvejumper
  */
-public class WeatherWebSitesTest {
+public class WindWebSiteTest {
     
-    public WeatherWebSitesTest() {
+    public WindWebSiteTest() {
     }
     
     @BeforeClass
