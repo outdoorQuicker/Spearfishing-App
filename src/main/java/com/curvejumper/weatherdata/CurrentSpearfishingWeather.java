@@ -8,7 +8,7 @@ import java.util.Date;
  *
  * @author curvejumper
  */
-public class CurrentWeatherData implements Weather{
+public class CurrentSpearfishingWeather implements Weather{
 /**
  * will call weatherWebsite data in order to get 
  * the current weather data from weatherWebsite object
@@ -30,7 +30,7 @@ public class CurrentWeatherData implements Weather{
     public double Wind() {
         windWeather.connectToSite(windURL);
         
-        return windWeather.windSpeedMPH(currentHour);
+        return windWeather.windSpeedMPH(currentHour.format(date));
     }
 
     @Override

@@ -50,7 +50,7 @@ class WindWebSite implements WeatherWebSite{
     
     private static final int MAX_WIND_SPEED = 100;
     private static final double KNOTTS_TO_MPH_CONST = 1.15078;
-    public WindWebSite (){
+    private void getHTMLData (){
         //collect appropiate data
         
         //grap first table in site
@@ -64,14 +64,16 @@ class WindWebSite implements WeatherWebSite{
         //get speed from FOURTH table row
         weatherTableRows.next();
         weatherWindSpeeds = weatherTableRows.next().select("td");
+        
+        System.out.println("\nCollected HTML elements!");
     }
     
-    public double windSpeedMPH(SimpleDateFormat currentHour) {
+    public double windSpeedMPH(String currentHour) {
         //call to get the time format that the website uses
         String time = callibrateHour(currentHour, webSiteTimes.length);
         
         double currentWindSpeed = MAX_WIND_SPEED;
-        for(int row = 0; row <= weatherTimes.size(); row++){
+        for(int row = 0; row < weatherTimes.size(); row++){
             if(time.equals(weatherTimes.get(row).text())){
                 currentWindSpeed = Double.parseDouble(weatherWindSpeeds.get(row).text());
             }
@@ -87,11 +89,17 @@ class WindWebSite implements WeatherWebSite{
         } catch (IOException ex) {
             Logger.getLogger(WindWebSite.class.getName()).log(Level.SEVERE, null, ex);
         }
+        System.out.println("\nConnected to wind web site!");
+        getHTMLData();
     }
     
-    private String callibrateHour(SimpleDateFormat currentHour, int max) {
+    private String callibrateHour(String currentHour, int max) {
+        System.out.println("The simple date format to string is this: " + currentHour);
+        //linear search for 8 elements so I left as is for now
         for(int closestHour = 0; closestHour < max; closestHour++){
-            if(Integer.parseInt(currentHour.toString()) < Integer.parseInt(webSiteTimes[closestHour])){
+            System.out.println("Trying: " + webSiteTimes[closestHour] + " against: " + currentHour);
+            if(Integer.parseInt(currentHour) < Integer.parseInt(webSiteTimes[closestHour])){
+                System.out.println("\nSuccess in callebreateHour! The time returned is: " + webSiteTimes[(closestHour - 1) % webSiteTimes.length]);
                 return webSiteTimes[(closestHour - 1) % webSiteTimes.length] + "h";
             }
         }

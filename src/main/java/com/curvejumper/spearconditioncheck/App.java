@@ -5,6 +5,7 @@
  */
 package com.curvejumper.spearconditioncheck;
 
+import com.curvejumper.weatherdata.CurrentSpearfishingWeather;
 import org.springframework.boot.SpringApplication;
 
 /**
@@ -13,8 +14,13 @@ import org.springframework.boot.SpringApplication;
  */
 public class App {
     public static void main(String[] args) throws Exception {
+        
+        CurrentSpearfishingWeather test = new CurrentSpearfishingWeather();
+        
+        
+        System.out.println(test.Wind());
         // Run Spring Boot
-        ConditionCheck.refreshConditions();
-        SpringApplication.run(App.class, args);
+//        ConditionCheck.refreshConditions();
+//        SpringApplication.run(App.class, args);
     }
 }
