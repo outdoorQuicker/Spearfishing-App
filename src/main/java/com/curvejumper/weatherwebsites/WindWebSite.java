@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.curvejumper.weatherdata;
+package com.curvejumper.weatherwebsites;
 
 import com.curvejumper.weatherwebsites.WeatherWebSite;
 import java.io.IOException;
@@ -21,7 +21,7 @@ import org.jsoup.select.Elements;
  *
  * @author curvejumper
  */
-class WindWebSite implements WeatherWebSite{
+public class WindWebSite implements WeatherWebSite{
     /**
      * This will get the weather website data 
      * it'll store specific weather objects that can be called whenever

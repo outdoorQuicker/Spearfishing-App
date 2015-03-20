@@ -1,6 +1,8 @@
 
-package com.curvejumper.weatherdata;
+package com.curvejumper.weather;
 
+import com.curvejumper.weather.Weather;
+import com.curvejumper.weatherwebsites.WindWebSite;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -8,7 +10,7 @@ import java.util.Date;
  *
  * @author curvejumper
  */
-public class CurrentSpearfishingWeather implements Weather{
+public class SpearfishingWeather implements Weather{
 /**
  * will call weatherWebsite data in order to get 
  * the current weather data from weatherWebsite object
@@ -42,13 +44,6 @@ public class CurrentSpearfishingWeather implements Weather{
     public int Swell() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    /**
-     * The current hour for the present date
-     * @param currentHour
-     * @return 
-     * The time it is closest to on the weather website
-     */
     
     
 }
