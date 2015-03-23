@@ -31,10 +31,12 @@ public class IdealCondition implements Condition {
     private static double IDEAL_WIND = Double.MAX_VALUE;
     private static int IDEAL_SWELL = Integer.MAX_VALUE;
     private static int IDEAL_RAIN = Integer.MAX_VALUE;
+    
+    private static String location = "";
 
     @Override
-    public void setWindSpeed() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setWindSpeed(double speed) {
+       IDEAL_WIND = speed;
     }
 
     @Override
@@ -48,8 +50,8 @@ public class IdealCondition implements Condition {
     }
 
     @Override
-    public void getWindSpeed() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public double getWindSpeed() {
+        return IDEAL_WIND;
     }
 
     @Override
@@ -64,7 +66,12 @@ public class IdealCondition implements Condition {
 
     @Override
     public void setLocation(String conditionForThisArea) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        location = conditionForThisArea;
+    }
+
+    @Override
+    public String getLocation() {
+        return location;
     }
 
     

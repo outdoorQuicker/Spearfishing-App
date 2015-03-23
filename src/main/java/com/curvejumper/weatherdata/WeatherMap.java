@@ -5,12 +5,13 @@
  */
 package com.curvejumper.weatherdata;
 
+import com.curvejumper.weathercondition.SpearConditionManager;
 import java.util.HashMap;
 
 /**
  *
  * @author curvejumper
  */
-class WeatherMap extends HashMap<String, Integer>{
+class WeatherMap extends HashMap<String, SpearConditionManager>{
     
 }

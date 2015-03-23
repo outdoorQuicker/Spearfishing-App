@@ -6,6 +6,7 @@
 package com.curvejumper.weatherdata;
 
 import com.curvejumper.weathercondition.Condition;
+import com.curvejumper.weathercondition.ConditionManager;
 
 /**
  *
@@ -17,21 +18,22 @@ public interface WeatherManager {
      * get an array string of locations from hashmap
      * @return 
      */
-    public String[] listLocations();
+    public String[] listOfLocations();
     
     /**
      * set json file with new weather data
      * @param location
-     * @param condition 
+     * @param conditionManager - holds idealCondition and CurrentCondition data
+     * as well as an int representing the ranking b/t ideal and CurrentConditions
      */
-    public void updateWeatherData(String location, Condition condition);
+    public void updateWeatherData(String location, ConditionManager conditionManager);
     
     /**
      * by location, get the Condition object
      * @param location
      * @return Condition object 
      */
-    public Condition getWeatherCondition(String location);
+    public ConditionManager getWeatherCondition(String location);
     
     /**
      * delete a weather conditions and forget the location

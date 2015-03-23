@@ -10,7 +10,7 @@ import java.util.Date;
  *
  * @author curvejumper
  */
-public class SpearfishingWeather implements Weather{
+public class SpearFishingWeather implements Weather{
 /**
  * will call weatherWebsite data in order to get 
  * the current weather data from weatherWebsite object

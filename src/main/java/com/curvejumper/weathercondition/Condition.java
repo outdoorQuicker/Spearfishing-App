@@ -13,14 +13,16 @@ public interface Condition {
     
     public void setLocation(String conditionForThisArea);
     
-    public void setWindSpeed();
+    public String getLocation();
+    
+    public void setWindSpeed(double speed);
     
     //set the ammount of days since rain occured in the area
     public void setRainyDays();
     
     public void setSwellHeight();
     
-    public void getWindSpeed();
+    public double getWindSpeed();
     
     public void getRainyDays();
     

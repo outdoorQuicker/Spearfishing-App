@@ -5,14 +5,21 @@
  */
 package com.curvejumper.weathercondition;
 
+import com.curvejumper.weather.SpearFishingWeather;
+
 /**
  *
  * @author curvejumper
  */
 public class CurrentCondition implements Condition{
+    
+    private static double CURRENT_WIND;
+    private static int CURRENT_SWELL;
+    private static int CURRENT_RAIN;
 
     private static String location = "";
     
+    SpearFishingWeather weather = new SpearFishingWeather();
     private static CurrentCondition instance = null;
 
     public static CurrentCondition getInstance() {
@@ -26,12 +33,12 @@ public class CurrentCondition implements Condition{
     protected CurrentCondition() {
         
     }
-    
-    @Override
-    public void setWindSpeed() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
+    @Override
+    public void setWindSpeed(double speed) {
+        CURRENT_WIND = speed;
+    }
+    
     @Override
     public void setRainyDays() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -43,8 +50,8 @@ public class CurrentCondition implements Condition{
     }
 
     @Override
-    public void getWindSpeed() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public double getWindSpeed() {
+        return CURRENT_WIND;
     }
 
     @Override
@@ -61,5 +68,9 @@ public class CurrentCondition implements Condition{
     public void setLocation(String conditionForThisArea) {
         location = conditionForThisArea;
     }
-    
+
+    @Override
+    public String getLocation() {
+        return location;
+    }
 }

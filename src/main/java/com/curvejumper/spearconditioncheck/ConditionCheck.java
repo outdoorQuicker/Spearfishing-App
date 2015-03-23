@@ -30,7 +30,8 @@ class ConditionCheck {
             @Override
             public void run() { rankings.renew(); }
         };
-        scheduler.scheduleAtFixedRate(weatherCheck, initialDelay, period, TimeUnit.MINUTES);
+        System.out.println("\nEntering scheduled thread");
+        scheduler.scheduleAtFixedRate(weatherCheck, initialDelay, period, TimeUnit.SECONDS);
         
     }
 }
