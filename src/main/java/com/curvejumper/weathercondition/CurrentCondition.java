@@ -40,13 +40,13 @@ public class CurrentCondition implements Condition{
     }
     
     @Override
-    public void setRainyDays() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setRainyDays(int rain) {
+        CURRENT_RAIN = rain;
     }
 
     @Override
-    public void setSwellHeight() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setSwellHeight(int height) {
+        CURRENT_SWELL = height;
     }
 
     @Override
@@ -55,13 +55,13 @@ public class CurrentCondition implements Condition{
     }
 
     @Override
-    public void getRainyDays() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int getRainyDays() {
+        return CURRENT_RAIN;
     }
 
     @Override
-    public void getSwellHeight() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int getSwellHeight() {
+        return CURRENT_SWELL;
     }
 
     @Override

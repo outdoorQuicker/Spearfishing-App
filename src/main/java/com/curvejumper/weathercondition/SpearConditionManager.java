@@ -10,21 +10,18 @@ package com.curvejumper.weathercondition;
  * @author curvejumper
  */
 public class SpearConditionManager implements ConditionManager {
-    private static IdealCondition idealCondition = new IdealCondition();
-    private static CurrentCondition currentCondition = new CurrentCondition();
+    private static IdealCondition idealCondition;
+    private static CurrentCondition currentCondition;
     private int conditionRanking;
     
-    private static SpearConditionManager instance = null;
-
-    public static SpearConditionManager getInstance() {
-        if (instance == null) {
-            instance = new SpearConditionManager();
-        }
-
-        return instance;
+    public SpearConditionManager(IdealCondition ideal, CurrentCondition current, int ranking) {
+        idealCondition = ideal;
+        currentCondition = current;
+        conditionRanking = ranking;
     }
-
-    protected SpearConditionManager() {
+    
+    //dummy constructor
+    public SpearConditionManager(){
         
     }
 

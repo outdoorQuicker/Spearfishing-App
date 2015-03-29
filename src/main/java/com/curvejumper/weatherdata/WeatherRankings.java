@@ -24,7 +24,7 @@ public class WeatherRankings {
      */
     private static CurrentCondition cc = null;
     private static IdealCondition ic = null;
-    private static SpearConditionManager manager = null;
+    private static SpearConditionManager manager;
     private static SpearFishingWeather weather = new SpearFishingWeather();
     private static int ranking, stopper = 0;
     private static SpearWeatherManager swm = new SpearWeatherManager();
@@ -81,10 +81,7 @@ public class WeatherRankings {
     }
 
     private void organizeConditionData() {
-        manager = SpearConditionManager.getInstance();
-        manager.setCurrentCondition(cc);
-        manager.setIdealCondition(cc);
-        manager.setRanking(ranking);
+        manager = new SpearConditionManager(ic, cc, ranking);
     }
 
     private void setCurrentConditionData(String location) {
@@ -100,8 +97,7 @@ public class WeatherRankings {
             System.out.println("get ic instance");
             ic.setLocation("malibu");
             System.out.println("set up manager");
-            manager = SpearConditionManager.getInstance();
-            manager.setIdealCondition(ic);
+            manager = new SpearConditionManager(ic, cc, ranking);
             System.out.println("set current condition");
             cc = CurrentCondition.getInstance();
             manager.setCurrentCondition(cc);

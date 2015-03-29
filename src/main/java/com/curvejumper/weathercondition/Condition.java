@@ -18,13 +18,13 @@ public interface Condition {
     public void setWindSpeed(double speed);
     
     //set the ammount of days since rain occured in the area
-    public void setRainyDays();
+    public void setRainyDays(int rain);
     
-    public void setSwellHeight();
+    public void setSwellHeight(int height);
     
     public double getWindSpeed();
     
-    public void getRainyDays();
+    public int getRainyDays();
     
-    public void getSwellHeight();
+    public int getSwellHeight();
 }
