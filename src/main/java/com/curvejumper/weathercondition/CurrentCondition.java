@@ -13,30 +13,23 @@ import com.curvejumper.weather.SpearFishingWeather;
  */
 public class CurrentCondition implements Condition{
     
-    private static double CURRENT_WIND;
+    private static double WindSpeed;
     private static int CURRENT_SWELL;
     private static int CURRENT_RAIN;
 
     private static String location = "";
     
-    SpearFishingWeather weather = new SpearFishingWeather();
-    private static CurrentCondition instance = null;
-
-    public static CurrentCondition getInstance() {
-        if (instance == null) {
-            instance = new CurrentCondition();
-        }
-
-        return instance;
+    public CurrentCondition(double speed) {
+        WindSpeed = speed;
     }
-
-    protected CurrentCondition() {
+    
+    public CurrentCondition(){
         
     }
 
     @Override
     public void setWindSpeed(double speed) {
-        CURRENT_WIND = speed;
+        WindSpeed = speed;
     }
     
     @Override
@@ -51,7 +44,7 @@ public class CurrentCondition implements Condition{
 
     @Override
     public double getWindSpeed() {
-        return CURRENT_WIND;
+        return WindSpeed;
     }
 
     @Override

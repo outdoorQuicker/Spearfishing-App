@@ -85,7 +85,7 @@ public class WeatherRankings {
     }
 
     private void setCurrentConditionData(String location) {
-        cc = CurrentCondition.getInstance();
+        cc = new CurrentCondition();
         cc.setLocation(location);
         cc.setWindSpeed(weather.Wind());
     }
@@ -93,13 +93,13 @@ public class WeatherRankings {
     private void testAddLocation() {
         if(stopper == 0){
             System.out.println("Quickly setting up test case");
-            ic = IdealCondition.getInstance();
+            ic = new IdealCondition();
             System.out.println("get ic instance");
             ic.setLocation("malibu");
             System.out.println("set up manager");
             manager = new SpearConditionManager(ic, cc, ranking);
             System.out.println("set current condition");
-            cc = CurrentCondition.getInstance();
+            cc = new CurrentCondition();
             manager.setCurrentCondition(cc);
             System.out.println("set ranking");
             manager.setRanking(0);

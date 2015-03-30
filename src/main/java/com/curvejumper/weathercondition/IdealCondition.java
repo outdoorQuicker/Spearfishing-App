@@ -14,21 +14,15 @@ public class IdealCondition implements Condition {
      * a comparison to the current conditions
      */
     
-    private static IdealCondition instance = null;
-
-    public static IdealCondition getInstance() {
-        if (instance == null) {
-            instance = new IdealCondition();
-        }
-
-        return instance;
+    public IdealCondition(double speed) {
+        WindSpeed = speed;
     }
-
-    protected IdealCondition() {
+    
+    public IdealCondition() {
         
     }
     
-    private static double IDEAL_WIND = Double.MAX_VALUE;
+    private static double WindSpeed = Double.MAX_VALUE;
     private static int IDEAL_SWELL = Integer.MAX_VALUE;
     private static int IDEAL_RAIN = Integer.MAX_VALUE;
     
@@ -36,7 +30,7 @@ public class IdealCondition implements Condition {
 
     @Override
     public void setWindSpeed(double speed) {
-       IDEAL_WIND = speed;
+       WindSpeed = speed;
     }
 
     @Override
@@ -51,7 +45,7 @@ public class IdealCondition implements Condition {
 
     @Override
     public double getWindSpeed() {
-        return IDEAL_WIND;
+        return WindSpeed;
     }
 
     @Override

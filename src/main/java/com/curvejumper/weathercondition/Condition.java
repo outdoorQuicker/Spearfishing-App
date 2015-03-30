@@ -5,10 +5,19 @@
  */
 package com.curvejumper.weathercondition;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 /**
  *
  * @author curvejumper
  */
+@JsonTypeInfo(use=JsonTypeInfo.Id.CLASS, include=JsonTypeInfo.As.PROPERTY, property="@class")
+@JsonSubTypes({  
+    @Type(value = IdealCondition.class, name = "idealCondition"),  
+    @Type(value = CurrentCondition.class, name = "currentCondition")
+    })
 public interface Condition {
     
     public void setLocation(String conditionForThisArea);

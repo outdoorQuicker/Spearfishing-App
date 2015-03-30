@@ -12,6 +12,6 @@ import java.util.HashMap;
  *
  * @author curvejumper
  */
-class WeatherMap extends HashMap<String, SpearConditionManager>{
-    
+class WeatherMap extends HashMap<String, SpearConditionManager> {
+
 }
